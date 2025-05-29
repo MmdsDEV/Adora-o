@@ -19,7 +19,7 @@
     }
 
     body {
-      background: #1a1a2e;
+      background: #0a0a16;
       color: white;
       min-height: 100vh;
       overflow-x: hidden;
@@ -41,14 +41,14 @@
       justify-content: center;
       align-items: center; 
       gap: 40px;
-      background: rgba(26, 26, 46, 0.9);
+      background: rgba(15, 15, 35, 0.95);
       border-radius: 20px;
       width: min(1100px, 95%);
-      box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset, 
-                  0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 
-                  0 4px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5),
+                  0 10px 30px rgba(0, 0, 0, 0.3);
       z-index: 10;
       padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .info {
@@ -65,11 +65,12 @@
       font-size: 2.5rem;
       margin-bottom: 25px;
       color: #fff;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+      background: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      padding: 5px 0;
     }
 
     .info p {
@@ -78,10 +79,11 @@
       font-size: 1.2rem;
       margin-bottom: 25px;
       line-height: 1.7;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .movie-night {
-      background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+      background: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -89,6 +91,7 @@
       font-size: 1.5rem;
       display: block;
       margin: 15px 0;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .btn {
@@ -101,8 +104,9 @@
       outline: none;
       text-decoration: none;
       color: #fff;
-      background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+                  0 0 15px rgba(255, 60, 0, 0.4);
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -110,7 +114,8 @@
 
     .btn:hover, .btn:focus {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                  0 0 20px rgba(255, 204, 0, 0.5);
     }
 
     /* SWIPER */
@@ -124,16 +129,18 @@
       font-size: 2.3rem;
       margin-bottom: 15px;
       color: #fff;
-      background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+      background: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
     .schedule p {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 25px;
       font-size: 1.1rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .swiper {
@@ -142,7 +149,8 @@
       padding: 0;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
 
     .swiper-slide {
@@ -167,7 +175,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(15, 32, 39, 0.7), transparent);
+      background: linear-gradient(to top, rgba(5, 10, 15, 0.8), transparent);
     }
 
     .swiper-slide span {
@@ -181,11 +189,13 @@
       letter-spacing: 2px;
       font-size: 1rem;
       font-weight: 700;
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: inset 2px -2px 20px rgba(214, 214, 214, 0.2), 
-                  inset -3px 3px 3px rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: inset 2px -2px 20px rgba(214, 214, 214, 0.3), 
+                  inset -3px 3px 3px rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(5px);
       z-index: 2;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .swiper-slide h2 {
@@ -193,12 +203,12 @@
       bottom: 0;
       left: 0;
       color: #fff;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 1.5rem;
       line-height: 1.4;
       margin: 0 0 30px 30px;
       z-index: 2;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     /* ANIMATED BACKGROUND */
@@ -218,11 +228,12 @@
       list-style: none;
       width: 20px;
       height: 20px;
-      background-color: #ff3cac;
-      background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+      background-color: #ff3c00;
+      background-image: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
       animation: animate 25s linear infinite;
       bottom: -150px;
       border-radius: 50%;
+      opacity: 0.8;
     }
 
     .circles li:nth-child(1) {
@@ -303,7 +314,7 @@
     @keyframes animate {
       0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 1;
+        opacity: 0.8;
         border-radius: 50%;
       }
       100% {
@@ -320,7 +331,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(15, 15, 15, 0.9);
+      background: rgba(5, 5, 15, 0.95);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -334,33 +345,38 @@
     }
 
     .confirmation-box {
-      background: white;
-      color: #333;
+      background: linear-gradient(135deg, #0a0a20, #1a1a3a);
+      color: #fff;
       text-align: center;
       padding: 50px 40px;
       border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6),
+                  0 0 20px rgba(255, 204, 0, 0.3);
       animation: popIn 0.5s ease forwards;
       max-width: 500px;
       width: 90%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .confirmation-box h2 {
       font-size: 2.2rem;
       margin-bottom: 15px;
-      color: #784ba0;
+      color: #ffcc00;
+      text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
     }
 
     .confirmation-box p {
       font-size: 1.2rem;
       margin-bottom: 25px;
       line-height: 1.7;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .confirmation-box i {
       font-size: 4rem;
-      color: #784ba0;
+      color: #ffcc00;
       margin-bottom: 25px;
+      text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
     }
 
     /* Animações */
@@ -391,14 +407,13 @@
 
     .header h1 {
       font-size: 2.5rem;
-      color: white;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+      background: linear-gradient(225deg, #ff3c00 0%, #ffcc00 50%, #00ffcc 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       display: inline-block;
       padding: 0 25px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     }
 
     /* Media Queries para Responsividade */
@@ -550,7 +565,9 @@
   <div class="header">
     <h1>Movimento Jovem</h1>
   </div>
-
+<br>
+<br>
+<br>
   <section>
     <div class="content">
       <div class="info">
@@ -568,44 +585,31 @@
       </div>
 
       <div class="schedule">
-        <h1>Programação</h1>
-        <p>Participe da nossa programação especial!</p>
-
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="img1.jpeg" alt="Adoração">
-              <div class="overlay"></div>
-              <span>20:00</span>
-              <h2>Adoração ao Santíssimo</h2>
+              
             </div>
 
             <div class="swiper-slide">
-              <img src="img2.jpeg" alt="Santa Missa">
-              <div class="overlay"></div>
-              <span>18:30</span>
-              <h2>Santa Missa</h2>
+              <img src="" alt="Santa Missa">
+          
             </div>
 
             <div class="swiper-slide">
               <img src="img3.jpeg" alt="Louvor">
-              <div class="overlay"></div>
-              <span>19:45</span>
-              <h2>Momentos de Louvor</h2>
+         
             </div>
 
             <div class="swiper-slide">
               <img src="img4.jpeg" alt="Momento Mariano">
-              <div class="overlay"></div>
-              <span>20:15</span>
-              <h2>Momento Mariano</h2>
+              
             </div>
 
             <div class="swiper-slide">
               <img src="img6.jpeg" alt="Confraternização">
-              <div class="overlay"></div>
-              <span>20:45</span>
-              <h2>Confraternização</h2>
+             
             </div>
           </div>
         </div>
