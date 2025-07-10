@@ -6,11 +6,7 @@
   <title>O Extraordinário - Encontro de Fé</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body, html {
       height: 100%;
@@ -25,7 +21,6 @@
       position: relative;
     }
 
-    /* Efeito de sobreposição escura */
     body::before {
       content: '';
       position: absolute;
@@ -41,7 +36,6 @@
       color: #fff;
       text-align: center;
       padding: 5vh 10vw;
-      animation: fadeInUp 2s ease-out;
     }
 
     h1 {
@@ -55,6 +49,18 @@
       font-size: 1.6em;
       color: #ffffff;
       margin-bottom: 20px;
+      min-height: 2.4em;
+    }
+
+    p, .info, .footer {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0px) !important;
     }
 
     p {
@@ -73,7 +79,6 @@
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255,255,255,0.2);
       margin-top: 15px;
-      animation: fadeIn 2s ease forwards;
     }
 
     .footer {
@@ -82,33 +87,9 @@
       opacity: 0.7;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #ffd700, 0 0 20px #fff;
-      }
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #ffd700;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { text-shadow: 0 0 10px #ffd700, 0 0 20px #fff; }
+      to { text-shadow: 0 0 20px #fff, 0 0 30px #ffd700; }
     }
 
     @media (max-width: 768px) {
@@ -121,20 +102,55 @@
 <body>
   <div class="container">
     <h1>📢 HOJE É O DIA!</h1>
-    <div class="highlight">✨ O Extraordinário – A Beleza da Vida Cotidiana ✨</div>
-    <p>Já parou pra pensar como Deus age nas pequenas coisas do nosso dia?<br>
+    <div class="highlight" id="typewriter"></div>
+
+    <p class="reveal">Já parou pra pensar como Deus age nas pequenas coisas do nosso dia?<br>
     Hoje queremos viver isso juntos! Vai ser um momento especial de partilha, oração e reflexão sobre como o ordinário também pode ser sagrado.</p>
     
-    <div class="info">
+    <div class="info reveal">
       🕗 <strong>HOJE | 20h00</strong><br>
       📍 <strong>Comunidade Nsa. Senhora Aparecida</strong><br>
       Avenida C, 212 – Setor Água Branca
     </div>
 
-    <p>Leva teu coração aberto e chama mais alguém pra vir com você!<br>
+    <p class="reveal">Leva teu coração aberto e chama mais alguém pra vir com você!<br>
     Vai ser profundo e inesquecível 💛</p>
 
-    <div class="footer">📸 Foto: <a href="https://www.instagram.com/amicaellysilva" target="_blank" style="color:#fff; text-decoration: underline;">@amicaellysilva</a></div>
+    <div class="footer reveal">📸 Foto: 
+      <a href="https://www.instagram.com/amicaellysilva" target="_blank" style="color:#fff; text-decoration: underline;">
+        @amicaellysilva
+      </a>
+    </div>
   </div>
+
+  <script>
+    // Efeito máquina de escrever no subtítulo
+    const text = '✨ O Extraordinário – A Beleza da Vida Cotidiana ✨';
+    const typewriter = document.getElementById('typewriter');
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        typewriter.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 60);
+      }
+    }
+
+    window.onload = typeEffect;
+
+    // Efeito de revelar ao rolar a página
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
