@@ -1,156 +1,191 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O Extraordinário - Encontro de Fé</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body, html {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    body {
-      background: url('img1.jpg') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      color: #fff;
-      text-align: center;
-      padding: 5vh 10vw;
-    }
-
-    h1 {
-      font-size: 3em;
-      color: #ffd700;
-      margin-bottom: 10px;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    .highlight {
-      font-size: 1.6em;
-      color: #ffffff;
-      margin-bottom: 20px;
-      min-height: 2.4em;
-    }
-
-    p, .info, .footer {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease-out;
-    }
-
-    .fade-in {
-      opacity: 1 !important;
-      transform: translateY(0px) !important;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.6em;
-      max-width: 800px;
-      margin: 0 auto 25px;
-    }
-
-    .info {
-      font-size: 1.3em;
-      background: rgba(255, 255, 255, 0.1);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 15px;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.2);
-      margin-top: 15px;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      opacity: 0.7;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ffd700, 0 0 20px #fff; }
-      to { text-shadow: 0 0 20px #fff, 0 0 30px #ffd700; }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2em; }
-      .highlight { font-size: 1.3em; }
-      p, .info { font-size: 1em; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noite de Adoração - A Beleza da Vida Cotidiana</title>
+    <style>
+        :root {
+            --primary: #6a1b9a;
+            --secondary: #f8bbd0;
+            --accent: #ffeb3b;
+            --text: #333;
+            --light: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #4a148c);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: var(--secondary);
+        }
+        
+        .divider {
+            height: 4px;
+            width: 100px;
+            background: var(--accent);
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+        
+        .event-info {
+            background-color: white;
+            max-width: 800px;
+            margin: -3rem auto 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .date-time {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .location {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .address {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .map-container {
+            margin: 3rem auto;
+            max-width: 800px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .event-info {
+                margin: -1rem auto 0;
+                padding: 1.5rem;
+            }
+            
+            .date-time {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>📢 HOJE É O DIA!</h1>
-    <div class="highlight" id="typewriter"></div>
-
-    <p class="reveal">Já parou pra pensar como Deus age nas pequenas coisas do nosso dia?<br>
-    Hoje queremos viver isso juntos! Vai ser um momento especial de partilha, oração e reflexão sobre como o ordinário também pode ser sagrado.</p>
+    <header>
+        <h1>NOITE DE ADORAÇÃO</h1>
+        <div class="subtitle">"A Beleza da Vida Cotidiana"</div>
+        <div class="divider"></div>
+    </header>
     
-    <div class="info reveal">
-      🕗 <strong>HOJE | 20h00</strong><br>
-      📍 <strong>Comunidade Nsa. Senhora Aparecida</strong><br>
-      Avenida C, 212 – Setor Água Branca
+    <div class="event-info">
+        <div class="date-time">QUINTA | 20h00</div>
+        <div class="location">Comunidade Nsa. Senhora Aparecida</div>
+        <div class="address">Avenida C, 212 - Setor Água Branca</div>
+        
+        <a href="#map" class="cta-button">VER NO MAPA</a>
     </div>
-
-    <p class="reveal">Leva teu coração aberto e chama mais alguém pra vir com você!<br>
-    Vai ser profundo e inesquecível 💛</p>
-
-    <div class="footer reveal">📸 Foto: 
-      <a href="https://www.instagram.com/movimentojovem._?igsh=OWpqdjFzYW1xejcw" target="_blank" style="color:#fff; text-decoration: underline;">
-        @movimentojovem 
-      </a>
+    
+    <div id="map" class="map-container">
+        <!-- Mapa do Google Maps incorporado -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-46.123456!3d-23.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDU5JzE1LjYiUyA0NsKwMDcnMjkuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0"></iframe>
     </div>
-  </div>
-
-  <script>
-    // Efeito máquina de escrever no subtítulo
-    const text = '✨ O Extraordinário – A Beleza da Vida Cotidiana ✨';
-    const typewriter = document.getElementById('typewriter');
-    let index = 0;
-
-    function typeEffect() {
-      if (index < text.length) {
-        typewriter.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 60);
-      }
-    }
-
-    window.onload = typeEffect;
-
-    // Efeito de revelar ao rolar a página
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+    
+    <footer>
+        <p>&copy; 2023 Comunidade Nsa. Senhora Aparecida. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
